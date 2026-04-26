@@ -1,4 +1,4 @@
-# Modules for utility functions
+# Модуль общих утилит, в основном для работы с данными.
 import os
 
 def load_env_variables():

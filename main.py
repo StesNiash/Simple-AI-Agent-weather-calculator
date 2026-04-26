@@ -1,4 +1,4 @@
-# This is the main entry point for the LLM chat application. It initializes the chat interface and handles user input.
+# Основная точка входа, где выполняется инициализация чата и CLI интерфейс.
 import os
 
 from api_call import call_llm
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     while True:
         user_input = input("You: ")
         if user_input.lower() == "exit":
-            print("Exiting chat. Goodbye!")
+            print("Завершаем чат. Прощайте!")
             break
         elif user_input.lower() == "new":
             chat = new_chat()

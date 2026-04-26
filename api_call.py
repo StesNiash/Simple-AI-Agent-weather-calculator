@@ -9,6 +9,8 @@ def get_client():
     if api_key and base_url:
         client = openai.OpenAI(api_key=api_key, base_url=base_url)
         return client
+    print("Не удалось создать клиента LLM. Убедитесь, что переменные окружения LLM_API_KEY и LLM_BASE_URL установлены.")
+    return None
 
 def crop_history(history, max_tokens=3000):
     """
