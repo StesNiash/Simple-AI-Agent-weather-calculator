@@ -1,14 +1,11 @@
 # Модуль общих утилит, в основном для работы с данными.
 import os
+import dotenv
 
 def load_env_variables():
     # Load environment variables from .env file if it exists
     if os.path.exists(".env"):
-        with open(".env", "r") as env_file:
-            for line in env_file:
-                if line.strip() and not line.startswith("#"):
-                    key, value = line.strip().split("=", 1)
-                    os.environ[key] = value
+        dotenv.load_dotenv(".env")
 
 def get_base_url():
     base_url = os.getenv("LLM_BASE_URL")
