@@ -13,10 +13,10 @@ def crop_history(history, max_tokens=3000):
     # Инициализируем переменные
     total_tokens = 0
     cropped_history = []
+    encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
     
     # Проходим по истории в обратном порядке, начиная с последнего сообщения
     for message in reversed(history):
-        encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
         tokens = encoding.encode(message["content"])
         message_tokens_count = len(tokens)
         
