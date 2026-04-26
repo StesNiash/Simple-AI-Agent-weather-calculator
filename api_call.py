@@ -50,6 +50,9 @@ def call_llm(history, model="gpt-3.5-turbo"):
     """
     try:
         client = get_client()
+        if not client:
+            return None
+
         system_prompt_str = get_system_prompt()
         cropped_history = crop_history(history)
 
